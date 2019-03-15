@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: currency-app-backend-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: currency-app-backend
+  template:
+    metadata:
+      labels:
+        app: currency-app-backend
+    spec:
+      containers:
+        - name: currency-app-backend-image
+          image: vmuneeb/currency-app-backend:1.1.0
+
